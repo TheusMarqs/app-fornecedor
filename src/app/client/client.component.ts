@@ -34,6 +34,8 @@ export class ClientComponent implements OnInit {
   }
 
   save() {
+    let checkbox = document.getElementById('checkbox') as HTMLInputElement;
+
     if (this.isEditing) {
       this.clientsService.update(this.formGroupClient.value).subscribe({
         next: () => {
@@ -45,12 +47,18 @@ export class ClientComponent implements OnInit {
     }
 
     else {
-      this.clientsService.save(this.formGroupClient.value).subscribe({
-        next: data => {
-          this.clients.push(data);
-          this.formGroupClient.reset();
-        }
-      })
+      if (checkbox.checked) {
+        this.clientsService.save(this.formGroupClient.value).subscribe({
+          next: data => {
+            this.clients.push(data);
+            this.formGroupClient.reset();
+          }
+        })
+      }
+
+      else {
+        alert ('Para prosseguir com o cadastro, aceite os termos de uso');
+      }
     }
   }
 
@@ -64,4 +72,6 @@ export class ClientComponent implements OnInit {
       next: () => this.loadClients()
     });
   }
+
+
 }

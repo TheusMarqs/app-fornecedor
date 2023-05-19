@@ -1,5 +1,13 @@
 {
-  "Clientes": [],
+  "Clientes": [
+    {
+      "id": 1,
+      "name": null,
+      "phone": null,
+      "cpf": null,
+      "email": null
+    }
+  ],
   "Fornecedores": [
     {
       "id": 1,

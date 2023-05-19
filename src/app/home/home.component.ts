@@ -19,6 +19,7 @@ export class HomeComponent implements OnInit {
     this.loadSuppliers();
   }
 
+
   loadSuppliers() {
     this.suppliersService.getSuppliers().subscribe({
       next: data => this.suppliers = data
@@ -44,4 +45,5 @@ export class HomeComponent implements OnInit {
         break;
     }
   }
+
 }
