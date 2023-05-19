@@ -1,3 +1,53 @@
 <div class="container text-center">
-  <div class="display-6">Home</div>
+  <div class="display-6 mb-2 mb-3">Clientes e Fornecedores</div>
+
+  <select (click)="selectDados()" [(ngModel)] = "select" class="form-select" aria-label="Default select example" >
+    <option value="cli">Clientes</option>
+    <option value="sup">Fornecedores</option>
+  </select>
+
+  <div class="row mt-5">
+    <div class="col-12 m-auto">
+  
+      <table *ngIf="escolha === 'sup'" id="table" class="table table-bordered border-dark">
+        <thead class="table-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">CPF</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let suppliers of suppliers">
+            <th scope="row">{{suppliers.id}}</th>
+            <td>{{suppliers.name}}</td>
+            <td>{{suppliers.email}}</td>
+            <td>{{suppliers.cpf}}</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <table *ngIf="escolha === 'cli'" id="table" class="table table-bordered border-dark">
+        <thead class="table-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">CPF</th>
+            <th scope="col">Telefone</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let clients of clients">
+            <th scope="row">{{clients.id}}</th>
+            <td>{{clients.name}}</td>
+            <td>{{clients.email}}</td>
+            <td>{{clients.cpf}}</td>
+            <td>{{clients.phone}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>

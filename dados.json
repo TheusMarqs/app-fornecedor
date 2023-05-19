@@ -1,0 +1,11 @@
+{
+  "Clientes": [],
+  "Fornecedores": [
+    {
+      "id": 1,
+      "name": "paola",
+      "email": "marcelo.1002@gmail.com",
+      "cpf": 4124124
+    }
+  ]
+}

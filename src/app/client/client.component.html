@@ -1,3 +1,65 @@
-<div class="container text-center">
-  <div class="display-6">Cadastro de Cliente</div>
+<div class="row mt-4">
+  <div class="col-8 m-auto">
+
+    <form [formGroup]="formGroupClient">
+      <div class="mb-3">
+        <div class="display-6 text-center">
+          Cadastro de Clientes
+        </div>
+        <label for="name" class="form-label">Nome:</label>
+        <input type="text" formControlName="name" class="form-control" id="name" placeholder="Digite seu nome">
+      </div>
+
+      <div class="mb-3">
+        <label for="phone" class="form-label">Telefone:</label>
+        <input type="number" formControlName="phone" class="form-control" id="phone" placeholder="Digite seu telefone">
+      </div>
+
+      <div class="mb-3">
+        <label for="email" class="form-label">Email:</label>
+        <input type="email" formControlName="email" class="form-control" id="email" placeholder="Digite seu email">
+      </div>
+
+      <div class="mb-3">
+        <label for="numero" class="form-label">CPF:</label>
+        <input type="number" formControlName="cpf" class="form-control" id="numero" placeholder="Digite seu CPF">
+      </div>
+
+      <div class="mb-3 d-flex justify-content-center">
+        <button class="btn btn-primary me-2" (click)="save()">Salvar</button>
+      </div>
+
+    </form>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-10 m-auto">
+
+    <table id="table" class="table table-bordered border-dark">
+      <thead class="table-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">CPF</th>
+          <th scope="col">Telefone</th>
+          <th scope="col">Opções</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let clients of clients">
+          <th scope="row">{{clients.id}}</th>
+          <td>{{clients.name}}</td>
+          <td>{{clients.email}}</td>
+          <td>{{clients.cpf}}</td>
+          <td>{{clients.phone}}</td>
+          <td>
+            <button class="btn btn-primary me-1" (click)="edit(clients)">Editar</button>
+            <button class="btn btn-primary" (click)="delete(clients)">Excluir</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
