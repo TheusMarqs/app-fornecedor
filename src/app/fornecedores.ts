@@ -3,4 +3,5 @@ export interface Suppliers {
     name: string;
     email: string;
     cpf: string;
+    produtos: string;
 }

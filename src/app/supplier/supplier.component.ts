@@ -9,7 +9,7 @@ import { FornecedorService } from '../fornecedor.service';
   styleUrls: ['./supplier.component.css']
 })
 export class SupplierComponent {
-  suppliers:  Suppliers[] = [];
+  suppliers: Suppliers[] = [];
   isEditing: boolean = false;
   formGroupSuppliers: FormGroup;
 
@@ -18,7 +18,8 @@ export class SupplierComponent {
       id: [''],
       name: [''],
       email: [''],
-      cpf: ['']
+      cpf: [''],
+      produtos: ['']
     });
   }
 
@@ -33,6 +34,8 @@ export class SupplierComponent {
   }
 
   save() {
+    let checkbox = document.getElementById('checkbox') as HTMLInputElement;
+
     if (this.isEditing) {
       this.suppliersService.update(this.formGroupSuppliers.value).subscribe({
         next: () => {
@@ -44,12 +47,18 @@ export class SupplierComponent {
     }
 
     else {
-      this.suppliersService.save(this.formGroupSuppliers.value).subscribe({
-        next: data => {
-          this.suppliers.push(data);
-          this.formGroupSuppliers.reset();
-        }
-      })
+      if (checkbox.checked) {
+        this.suppliersService.save(this.formGroupSuppliers.value).subscribe({
+          next: data => {
+            this.suppliers.push(data);
+            this.formGroupSuppliers.reset();
+          }
+        })
+      }
+
+      else {
+        alert ('Para prosseguir com o cadastro, aceite os termos de uso');
+      }
     }
   }
 
@@ -62,6 +71,10 @@ export class SupplierComponent {
     this.suppliersService.delete(suppliers).subscribe({
       next: () => this.loadSuppliers()
     });
+  }
+
+  clean() {
+    this.formGroupSuppliers.reset();
   }
 
 }

@@ -20,19 +20,20 @@
         <input type="email" formControlName="email" class="form-control" id="email" placeholder="Digite seu email">
       </div>
 
-      <div class="mb-3">
+      <div class="mb-4">
         <label for="numero" class="form-label">CPF:</label>
         <input type="number" formControlName="cpf" class="form-control" id="numero" placeholder="Digite seu CPF">
       </div>
 
-      <div class="mb-3 d-flex justify-content-between">
-        <div class="form-check">
+      <div class="mb-3 d-flex justify-content-center">
+        <div class="form-check mt-1">
           <input class="form-check-input" type="checkbox" id="checkbox">
-          <label class="form-check-label" for="flexCheckDefault">
+          <label class="form-check-label me-4" for="flexCheckDefault">
             Concordo com os termos de uso
           </label>
         </div>
-        <button class="btn btn-primary" (click)="save()">Salvar</button>
+        <button class="btn btn-primary me-1" (click)="save()">Salvar</button>
+        <button class="btn btn-danger" (click)="clean()">Limpar</button>
       </div>
     </form>
   </div>
@@ -45,7 +46,7 @@
       <thead class="table-dark">
         <tr>
           <th scope="col">#</th>
-          <th scope="col">Name</th>
+          <th scope="col">Nome</th>
           <th scope="col">Email</th>
           <th scope="col">CPF</th>
           <th scope="col">Telefone</th>
@@ -60,8 +61,8 @@
           <td>{{clients.cpf}}</td>
           <td>{{clients.phone}}</td>
           <td>
-            <button class="btn btn-primary me-1" (click)="edit(clients)">Editar</button>
-            <button class="btn btn-primary" (click)="delete(clients)">Excluir</button>
+            <button class="btn btn-success me-1" (click)="edit(clients)">Editar</button>
+            <button class="btn btn-danger" (click)="delete(clients)">Excluir</button>
           </td>
         </tr>
       </tbody>

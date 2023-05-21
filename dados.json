@@ -1,19 +1,4 @@
 {
-  "Clientes": [
-    {
-      "id": 1,
-      "name": null,
-      "phone": null,
-      "cpf": null,
-      "email": null
-    }
-  ],
-  "Fornecedores": [
-    {
-      "id": 1,
-      "name": "paola",
-      "email": "marcelo.1002@gmail.com",
-      "cpf": 4124124
-    }
-  ]
+  "Clientes": [],
+  "Fornecedores": []
 }

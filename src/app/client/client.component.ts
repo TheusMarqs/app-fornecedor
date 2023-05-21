@@ -73,5 +73,9 @@ export class ClientComponent implements OnInit {
     });
   }
 
+  clean() {
+    this.formGroupClient.reset();
+  }
+
 
 }

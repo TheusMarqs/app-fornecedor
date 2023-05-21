@@ -16,13 +16,42 @@
       </div>
 
       <div class="mb-3">
-        <label for="numero" class="form-label">CPF:</label>
-        <input type="number" formControlName="cpf" class="form-control" id="numero"
+        <label for="numero" class="form-label">CPF/CNPJ:</label>
+        <input type="number" formControlName="cpf" class="form-control" id="cpf"
           placeholder="Digite seu CPF">
       </div>
 
+      <div class="mb-4">
+        <label for="produtos" class="form-label">Selecione o produto fornecido:</label>
+        <div class="form-check">
+          <input class="form-check-input" formControlName="produtos" value="Brinquedos" type="radio" name="brinquedos" id="brinquedos">
+          <label class="form-check-label" for="brinquedos">
+            Brinquedos
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" value="Alimentos" formControlName="produtos" name="alimentos" id="alimentos">
+          <label class="form-check-label" for="alimentos">
+            Alimentícios
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" value="Utensílios domesticos" formControlName="produtos" type="radio" name="domesticos" id="domesticos">
+          <label class="form-check-label" for="domesticos">
+            Utensílios domésticos
+          </label>
+        </div>
+      </div>
+
       <div class="mb-3 d-flex justify-content-center">
-        <button class="btn btn-primary me-2" (click)="save()">Salvar</button>
+        <div class="form-check mt-1">
+          <input class="form-check-input" type="checkbox" id="checkbox">
+          <label class="form-check-label me-4" for="flexCheckDefault">
+            Concordo com os termos de uso
+          </label>
+        </div>
+        <button class="btn btn-primary me-1" (click)="save()">Salvar</button>
+        <button class="btn btn-danger" (click)="clean()">Limpar</button>
       </div>
 
     </form>
@@ -36,9 +65,10 @@
       <thead class="table-dark">
         <tr>
           <th scope="col">#</th>
-          <th scope="col">Name</th>
+          <th scope="col">Nome</th>
           <th scope="col">Email</th>
-          <th scope="col">CPF</th>
+          <th scope="col">CPF/CNPJ</th>
+          <th scope="col">Produtos Fornecidos</th>
           <th scope="col">Opções</th>
         </tr>
       </thead>
@@ -48,9 +78,10 @@
           <td>{{suppliers.name}}</td>
           <td>{{suppliers.email}}</td>
           <td>{{suppliers.cpf}}</td>
+          <td>{{suppliers.produtos}}</td>
           <td>
-            <button class="btn btn-primary me-1" (click)="edit(suppliers)">Editar</button>
-            <button class="btn btn-primary" (click)="delete(suppliers)">Excluir</button>
+            <button class="btn btn-success me-1" (click)="edit(suppliers)">Editar</button>
+            <button class="btn btn-danger" (click)="delete(suppliers)">Excluir</button>
           </td>
         </tr>
       </tbody>
