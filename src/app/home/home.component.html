@@ -1,14 +1,15 @@
 <div class="container text-center">
-  <div class="display-6 mb-2 mb-3">Clientes e Fornecedores</div>
+  <div class="display-5 mb-5">Clientes e Fornecedores</div>
+  <div class="display-6 mb-2 mb-3">Selecione a tabela que deseja visualizar</div>
 
-  <select (click)="selectDados()" [(ngModel)] = "select" class="form-select" aria-label="Default select example" >
+  <select (click)="selectDados()" [(ngModel)] = "select" class="form-select" aria-label="Default select example">
     <option value="cli">Clientes</option>
     <option value="sup">Fornecedores</option>
   </select>
 
   <div class="row mt-5">
     <div class="col-12 m-auto">
-  
+
       <table *ngIf="escolha === 'sup'" id="table" class="table table-bordered border-dark">
         <thead class="table-dark">
           <tr>
@@ -16,6 +17,7 @@
             <th scope="col">Name</th>
             <th scope="col">Email</th>
             <th scope="col">CPF</th>
+            <th scope="col">Produtos Fornecidos</th>
           </tr>
         </thead>
         <tbody>
@@ -24,6 +26,7 @@
             <td>{{suppliers.name}}</td>
             <td>{{suppliers.email}}</td>
             <td>{{suppliers.cpf}}</td>
+            <td>{{suppliers.produtos}}</td>
           </tr>
         </tbody>
       </table>

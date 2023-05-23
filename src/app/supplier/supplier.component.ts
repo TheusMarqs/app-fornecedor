@@ -60,6 +60,7 @@ export class SupplierComponent {
         alert ('Para prosseguir com o cadastro, aceite os termos de uso');
       }
     }
+    checkbox.checked = false;
   }
 
   edit(suppliers: Suppliers) {

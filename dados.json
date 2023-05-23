@@ -1,4 +1,48 @@
 {
-  "Clientes": [],
-  "Fornecedores": []
+  "Clientes": [
+    {
+      "id": 1,
+      "name": "rodrigo",
+      "phone": 5124214312,
+      "cpf": 5141241,
+      "email": "rodrigo@gmail.com"
+    },
+    {
+      "id": 2,
+      "name": "roberta",
+      "phone": 312314221,
+      "cpf": 5154124124,
+      "email": "roberta@gmail.com"
+    },
+    {
+      "id": 3,
+      "name": "paulao",
+      "phone": 312542154,
+      "cpf": 956786583,
+      "email": "paulao@gmail.com"
+    }
+  ],
+  "Fornecedores": [
+    {
+      "id": 1,
+      "name": "José",
+      "email": "josé@gmail.com",
+      "cpf": 4123413,
+      "produtos": "Alimentos"
+    },
+    {
+      "id": 2,
+      "name": "gabriel",
+      "email": "gabriel@gmail.com",
+      "cpf": 41242143123,
+      "produtos": "Utensílios domesticos"
+    },
+    {
+      "id": 3,
+      "name": "emilio",
+      "email": "emilio@gmail.com",
+      "cpf": 51234125,
+      "produtos": "Brinquedos"
+    }
+  ]
 }
